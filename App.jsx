@@ -49,14 +49,38 @@ export default function App() {
     */
 
     /* ️⬇️️ ------------------ Write your code below! -----------------️️ ⬇️️ */
-    
-    
-    
-    
-    
-    
-    
-    
+  
+    const getRandomSkills = (n) =>{
+        
+        if(!attackOptionsList){
+            return ["fire bolt","frost bolt","lighting bolt","toast bolt", "lazy bolt", "bolt bolt"]
+        }
+        let skills = []
+        for (let i=0; i<n ;i++){
+            skills.push(attackOptionsList[Math.floor(Math.random() * attackOptionsList.length)])
+        }
+        return skills
+    }
+
+     const getRandomName =  () =>{
+         if(!namesList){
+             return "Batman"
+         }
+         return namesList[Math.floor(Math.random() * namesList.length)]
+     }
+     
+     const [characterData, setCharacterData] = React.useState({
+        hat: false,
+        shield: false,
+        weapon: "sword",
+        name: getRandomName(),
+        attackOptions: getRandomSkills(6),
+        stats: {
+            hp: 40,
+            mp: 100,
+            strength: 100
+        }
+    })
     
     
     
